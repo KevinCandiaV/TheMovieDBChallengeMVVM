@@ -74,6 +74,141 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A304B4E2A911E4B00BDFA76 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0A304B542A911EE800BDFA76 /* Services */,
+				0A304B532A911ED200BDFA76 /* Model */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		0A304B4F2A911E5300BDFA76 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0A304B5B2A9121B900BDFA76 /* CustomViews */,
+				0A304B5A2A91201600BDFA76 /* Services */,
+				0A304B592A91200F00BDFA76 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0A304B502A911E5C00BDFA76 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				0A304B5C2A91240A00BDFA76 /* MovieLogin */,
+				0A304B5E2A91242200BDFA76 /* MovieList */,
+				0A304B5D2A91241800BDFA76 /* MovieDetail */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		0A304B512A911E7600BDFA76 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0A5F68112A91185700ECABCE /* Assets.xcassets */,
+				0A5F68132A91185700ECABCE /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0A304B522A911E8B00BDFA76 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0A5F68052A91185600ECABCE /* AppDelegate.swift */,
+				0A5F68072A91185600ECABCE /* SceneDelegate.swift */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		0A304B532A911ED200BDFA76 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A304B582A911FD600BDFA76 /* Base */,
+				0A304B572A911FC700BDFA76 /* Home */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A304B542A911EE800BDFA76 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0A304B562A911F2500BDFA76 /* Constants */,
+				0A304B552A911F0400BDFA76 /* Repositories */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0A304B552A911F0400BDFA76 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		0A304B562A911F2500BDFA76 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0A304B572A911FC700BDFA76 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0A304B582A911FD600BDFA76 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0A304B592A91200F00BDFA76 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A304B5A2A91201600BDFA76 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0A304B5B2A9121B900BDFA76 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		0A304B5C2A91240A00BDFA76 /* MovieLogin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MovieLogin;
+			sourceTree = "<group>";
+		};
+		0A304B5D2A91241800BDFA76 /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		0A304B5E2A91242200BDFA76 /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
 		0A5F67F92A91185600ECABCE = {
 			isa = PBXGroup;
 			children = (
@@ -97,10 +232,11 @@
 		0A5F68042A91185600ECABCE /* TheMovieDBChallengeMVVM */ = {
 			isa = PBXGroup;
 			children = (
-				0A5F68052A91185600ECABCE /* AppDelegate.swift */,
-				0A5F68072A91185600ECABCE /* SceneDelegate.swift */,
-				0A5F68112A91185700ECABCE /* Assets.xcassets */,
-				0A5F68132A91185700ECABCE /* LaunchScreen.storyboard */,
+				0A304B522A911E8B00BDFA76 /* SupportFiles */,
+				0A304B512A911E7600BDFA76 /* Resources */,
+				0A304B4E2A911E4B00BDFA76 /* Core */,
+				0A304B4F2A911E5300BDFA76 /* Common */,
+				0A304B502A911E5C00BDFA76 /* Module */,
 				0A5F68162A91185700ECABCE /* Info.plist */,
 				0A5F680E2A91185600ECABCE /* TheMovieDBChallengeMVVM.xcdatamodeld */,
 			);
