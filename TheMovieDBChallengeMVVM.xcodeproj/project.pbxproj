@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A304B612A91263400BDFA76 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 0A304B602A91263400BDFA76 /* AlamofireImage */; };
+		0A304B642A9126A700BDFA76 /* MovieLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B622A9126A700BDFA76 /* MovieLoginViewController.swift */; };
+		0A304B652A9126A700BDFA76 /* MovieLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A304B632A9126A700BDFA76 /* MovieLoginViewController.xib */; };
+		0A304B672A9126F000BDFA76 /* MovieLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B662A9126F000BDFA76 /* MovieLoginViewModel.swift */; };
+		0A304B6A2A9127D500BDFA76 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B692A9127D500BDFA76 /* Observable.swift */; };
+		0A304B6D2A9130CE00BDFA76 /* ActivityOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B6C2A9130CE00BDFA76 /* ActivityOverlay.swift */; };
+		0A304B6F2A9130E800BDFA76 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B6E2A9130E800BDFA76 /* ActivityView.swift */; };
+		0A304B712A91310100BDFA76 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B702A91310100BDFA76 /* Alert.swift */; };
+		0A304B732A91311700BDFA76 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B722A91311700BDFA76 /* AlertPresentable.swift */; };
+		0A304B752A91316D00BDFA76 /* UIImageView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B742A91316D00BDFA76 /* UIImageView+Helper.swift */; };
+		0A304B772A91319A00BDFA76 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B762A91319A00BDFA76 /* UIView+Animations.swift */; };
+		0A304B792A9131F000BDFA76 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B782A9131F000BDFA76 /* UIColor+Helper.swift */; };
+		0A304B7B2A91326400BDFA76 /* CGFloat+Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B7A2A91326400BDFA76 /* CGFloat+Help.swift */; };
+		0A304B7D2A9132B200BDFA76 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B7C2A9132B200BDFA76 /* UIView+Constraints.swift */; };
+		0A304B7F2A9132E900BDFA76 /* UIViewController+Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B7E2A9132E900BDFA76 /* UIViewController+Help.swift */; };
+		0A304B812A91333D00BDFA76 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A304B802A91333D00BDFA76 /* String+Helpers.swift */; };
 		0A5F68062A91185600ECABCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F68052A91185600ECABCE /* AppDelegate.swift */; };
 		0A5F68082A91185600ECABCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F68072A91185600ECABCE /* SceneDelegate.swift */; };
 		0A5F68102A91185600ECABCE /* TheMovieDBChallengeMVVM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A5F680E2A91185600ECABCE /* TheMovieDBChallengeMVVM.xcdatamodeld */; };
@@ -35,6 +51,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A304B622A9126A700BDFA76 /* MovieLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLoginViewController.swift; sourceTree = "<group>"; };
+		0A304B632A9126A700BDFA76 /* MovieLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieLoginViewController.xib; sourceTree = "<group>"; };
+		0A304B662A9126F000BDFA76 /* MovieLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLoginViewModel.swift; sourceTree = "<group>"; };
+		0A304B692A9127D500BDFA76 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		0A304B6C2A9130CE00BDFA76 /* ActivityOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityOverlay.swift; sourceTree = "<group>"; };
+		0A304B6E2A9130E800BDFA76 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		0A304B702A91310100BDFA76 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		0A304B722A91311700BDFA76 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		0A304B742A91316D00BDFA76 /* UIImageView+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Helper.swift"; sourceTree = "<group>"; };
+		0A304B762A91319A00BDFA76 /* UIView+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
+		0A304B782A9131F000BDFA76 /* UIColor+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
+		0A304B7A2A91326400BDFA76 /* CGFloat+Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Help.swift"; sourceTree = "<group>"; };
+		0A304B7C2A9132B200BDFA76 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		0A304B7E2A9132E900BDFA76 /* UIViewController+Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Help.swift"; sourceTree = "<group>"; };
+		0A304B802A91333D00BDFA76 /* String+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Helpers.swift"; sourceTree = "<group>"; };
 		0A5F68022A91185600ECABCE /* TheMovieDBChallengeMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDBChallengeMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A5F68052A91185600ECABCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A5F68072A91185600ECABCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A304B612A91263400BDFA76 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +118,7 @@
 		0A304B4F2A911E5300BDFA76 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0A304B682A9127CC00BDFA76 /* Utils */,
 				0A304B5B2A9121B900BDFA76 /* CustomViews */,
 				0A304B5A2A91201600BDFA76 /* Services */,
 				0A304B592A91200F00BDFA76 /* Extensions */,
@@ -170,6 +203,13 @@
 		0A304B592A91200F00BDFA76 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0A304B762A91319A00BDFA76 /* UIView+Animations.swift */,
+				0A304B742A91316D00BDFA76 /* UIImageView+Helper.swift */,
+				0A304B782A9131F000BDFA76 /* UIColor+Helper.swift */,
+				0A304B7A2A91326400BDFA76 /* CGFloat+Help.swift */,
+				0A304B7C2A9132B200BDFA76 /* UIView+Constraints.swift */,
+				0A304B7E2A9132E900BDFA76 /* UIViewController+Help.swift */,
+				0A304B802A91333D00BDFA76 /* String+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -184,6 +224,7 @@
 		0A304B5B2A9121B900BDFA76 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				0A304B6B2A9130B900BDFA76 /* ActivityView */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -191,6 +232,9 @@
 		0A304B5C2A91240A00BDFA76 /* MovieLogin */ = {
 			isa = PBXGroup;
 			children = (
+				0A304B622A9126A700BDFA76 /* MovieLoginViewController.swift */,
+				0A304B632A9126A700BDFA76 /* MovieLoginViewController.xib */,
+				0A304B662A9126F000BDFA76 /* MovieLoginViewModel.swift */,
 			);
 			path = MovieLogin;
 			sourceTree = "<group>";
@@ -207,6 +251,25 @@
 			children = (
 			);
 			path = MovieList;
+			sourceTree = "<group>";
+		};
+		0A304B682A9127CC00BDFA76 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0A304B692A9127D500BDFA76 /* Observable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		0A304B6B2A9130B900BDFA76 /* ActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				0A304B6C2A9130CE00BDFA76 /* ActivityOverlay.swift */,
+				0A304B6E2A9130E800BDFA76 /* ActivityView.swift */,
+				0A304B702A91310100BDFA76 /* Alert.swift */,
+				0A304B722A91311700BDFA76 /* AlertPresentable.swift */,
+			);
+			path = ActivityView;
 			sourceTree = "<group>";
 		};
 		0A5F67F92A91185600ECABCE = {
@@ -276,6 +339,9 @@
 			dependencies = (
 			);
 			name = TheMovieDBChallengeMVVM;
+			packageProductDependencies = (
+				0A304B602A91263400BDFA76 /* AlamofireImage */,
+			);
 			productName = TheMovieDBChallengeMVVM;
 			productReference = 0A5F68022A91185600ECABCE /* TheMovieDBChallengeMVVM.app */;
 			productType = "com.apple.product-type.application";
@@ -348,6 +414,9 @@
 				Base,
 			);
 			mainGroup = 0A5F67F92A91185600ECABCE;
+			packageReferences = (
+				0A304B5F2A91263400BDFA76 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = 0A5F68032A91185600ECABCE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -366,6 +435,7 @@
 			files = (
 				0A5F68152A91185700ECABCE /* LaunchScreen.storyboard in Resources */,
 				0A5F68122A91185700ECABCE /* Assets.xcassets in Resources */,
+				0A304B652A9126A700BDFA76 /* MovieLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,8 +460,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A304B752A91316D00BDFA76 /* UIImageView+Helper.swift in Sources */,
+				0A304B712A91310100BDFA76 /* Alert.swift in Sources */,
 				0A5F68102A91185600ECABCE /* TheMovieDBChallengeMVVM.xcdatamodeld in Sources */,
+				0A304B732A91311700BDFA76 /* AlertPresentable.swift in Sources */,
+				0A304B812A91333D00BDFA76 /* String+Helpers.swift in Sources */,
+				0A304B792A9131F000BDFA76 /* UIColor+Helper.swift in Sources */,
+				0A304B7B2A91326400BDFA76 /* CGFloat+Help.swift in Sources */,
+				0A304B642A9126A700BDFA76 /* MovieLoginViewController.swift in Sources */,
+				0A304B7F2A9132E900BDFA76 /* UIViewController+Help.swift in Sources */,
+				0A304B772A91319A00BDFA76 /* UIView+Animations.swift in Sources */,
+				0A304B6D2A9130CE00BDFA76 /* ActivityOverlay.swift in Sources */,
 				0A5F68062A91185600ECABCE /* AppDelegate.swift in Sources */,
+				0A304B672A9126F000BDFA76 /* MovieLoginViewModel.swift in Sources */,
+				0A304B6F2A9130E800BDFA76 /* ActivityView.swift in Sources */,
+				0A304B7D2A9132B200BDFA76 /* UIView+Constraints.swift in Sources */,
+				0A304B6A2A9127D500BDFA76 /* Observable.swift in Sources */,
 				0A5F68082A91185600ECABCE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -726,6 +810,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A304B5F2A91263400BDFA76 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A304B602A91263400BDFA76 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A304B5F2A91263400BDFA76 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		0A5F680E2A91185600ECABCE /* TheMovieDBChallengeMVVM.xcdatamodeld */ = {
