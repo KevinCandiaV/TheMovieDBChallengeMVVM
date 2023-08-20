@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieLoginViewController" customModule="TheMovieDBChallengeMVVM" customModuleProvider="target">
             <connections>
+                <outlet property="loginButton" destination="hAq-3z-iW4" id="rbF-xd-o0F"/>
+                <outlet property="loginImageView" destination="Vgn-gq-qIk" id="OoY-Sy-gNO"/>
+                <outlet property="passwordTextField" destination="eqx-WN-Scp" id="F5t-J2-AN6"/>
+                <outlet property="userTextField" destination="IPo-92-4W9" id="Ope-b2-HtM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
