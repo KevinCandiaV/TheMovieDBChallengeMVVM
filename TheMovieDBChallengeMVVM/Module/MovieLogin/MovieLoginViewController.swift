@@ -15,6 +15,8 @@ class MovieLoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    @IBOutlet weak var userMessageLabel: UILabel!
+    @IBOutlet weak var passwordMessageLabel: UILabel!
     // MARK: - ViewModel
     var viewModel: MovieLoginViewModelProtocol = MovieLoginViewModel()
     
@@ -36,16 +38,12 @@ class MovieLoginViewController: UIViewController {
     }
     
     @objc func loginButtonTapped(_ button: UIButton) {
-        print("Login Action")
+        hideErrorMessages()
         guard let user = userTextField.text, let pass = passwordTextField.text else {
             return
         }
         viewModel.login(user: user, password: pass)
     }
-}
-
-extension MovieLoginViewController: UITextFieldDelegate {
-//    TODO Action for TextfieldDelegate
 }
 
 // MARK: - SetupUI
@@ -57,6 +55,31 @@ extension MovieLoginViewController {
         // MARK: - Delegates
         userTextField.delegate = self
         passwordTextField.delegate = self
+        
+        // MARK: - Placeholder
+        userTextField.placeholder = "Ingrese su usuario"
+        passwordTextField.text = "Ingrese su password"
+        
+        userTextField.keyboardType = .emailAddress
+        passwordTextField.isSecureTextEntry = true
+        
+        userMessageLabel.isHidden = true
+        passwordMessageLabel.isHidden = true
+    }
+    
+    // MARK: - Animations
+    func showErrorMessages() {
+        UIView.animate(withDuration: 1, delay: 0.25, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.2) {
+            self.userMessageLabel.isHidden = false
+            self.passwordMessageLabel.isHidden = false
+        }
+    }
+    
+    func hideErrorMessages() {
+        UIView.animate(withDuration: 1, delay: 0.1, usingSpringWithDamping: 0.4, initialSpringVelocity: 0.4) {
+            self.userMessageLabel.isHidden = true
+            self.passwordMessageLabel.isHidden = true
+        }
     }
 }
 
@@ -68,7 +91,7 @@ extension MovieLoginViewController {
         }
         
         self.viewModel.isSuccesLoginObservable.bind(to: self) { (self, isSuccess) in
-            self.presentMovieListView()
+            isSuccess ? self.presentMovieListView() : self.showErrorMessages()
         }
     }
 }
@@ -79,4 +102,8 @@ extension MovieLoginViewController {
         let movieListViewController: MovieListViewController = MovieListViewController()
         self.navigationController?.pushViewController(movieListViewController, animated: true)
     }
+}
+
+extension MovieLoginViewController: UITextFieldDelegate {
+//    TODO Action for TextfieldDelegate
 }

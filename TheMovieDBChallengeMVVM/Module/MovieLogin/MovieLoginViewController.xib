@@ -13,7 +13,9 @@
             <connections>
                 <outlet property="loginButton" destination="hAq-3z-iW4" id="rbF-xd-o0F"/>
                 <outlet property="loginImageView" destination="Vgn-gq-qIk" id="OoY-Sy-gNO"/>
+                <outlet property="passwordMessageLabel" destination="wfe-DS-GPo" id="LxS-Ae-ESp"/>
                 <outlet property="passwordTextField" destination="eqx-WN-Scp" id="F5t-J2-AN6"/>
+                <outlet property="userMessageLabel" destination="fk7-EF-Xv6" id="Dy1-B0-qil"/>
                 <outlet property="userTextField" destination="IPo-92-4W9" id="Ope-b2-HtM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vgn-gq-qIk">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoMovie" translatesAutoresizingMaskIntoConstraints="NO" id="Vgn-gq-qIk">
                     <rect key="frame" x="96.666666666666686" y="152.66666666666666" width="200" height="199.99999999999997"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="Qbn-ml-tZd"/>
@@ -31,22 +33,34 @@
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="e3R-Vs-zwa">
-                    <rect key="frame" x="20" y="372.66666666666669" width="353" height="76"/>
+                    <rect key="frame" x="20" y="372.66666666666669" width="353" height="132.66666666666669"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IPo-92-4W9">
                             <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digite su usuario" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fk7-EF-Xv6">
+                            <rect key="frame" x="0.0" y="42" width="353" height="20.333333333333329"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqx-WN-Scp">
-                            <rect key="frame" x="0.0" y="42" width="353" height="34"/>
+                            <rect key="frame" x="0.0" y="70.333333333333314" width="353" height="34"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digite su password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfe-DS-GPo">
+                            <rect key="frame" x="0.0" y="112.33333333333331" width="353" height="20.333333333333343"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAq-3z-iW4">
-                    <rect key="frame" x="135.33333333333334" y="468.66666666666669" width="122.66666666666666" height="34.333333333333314"/>
+                    <rect key="frame" x="135.33333333333334" y="525.33333333333337" width="122.66666666666666" height="34.333333333333371"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Iniciar sesion"/>
                 </button>
@@ -74,8 +88,12 @@
         </view>
     </objects>
     <resources>
+        <image name="logoMovie" width="133.33332824707031" height="133.33332824707031"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

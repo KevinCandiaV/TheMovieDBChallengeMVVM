@@ -22,7 +22,7 @@ class CoreDataRepository {
 
         do {
             try context.save()
-            print("pelicula guardada \(movie.id?.description)")
+            print("pelicula guardada \(String(describing: movie.id?.description))")
         } catch {
             print(error.localizedDescription)
         }

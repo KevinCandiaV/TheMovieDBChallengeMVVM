@@ -142,7 +142,6 @@
 		0A304B4F2A911E5300BDFA76 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				0AAA35A12A92DA1C00696781 /* Resources */,
 				0A304B682A9127CC00BDFA76 /* Utils */,
 				0A304B5B2A9121B900BDFA76 /* CustomViews */,
 				0A304B5A2A91201600BDFA76 /* Services */,
@@ -182,7 +181,6 @@
 		0A304B532A911ED200BDFA76 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0A304B582A911FD600BDFA76 /* Login */,
 				0A304B572A911FC700BDFA76 /* List */,
 			);
 			path = Model;
@@ -209,6 +207,7 @@
 		0A304B562A911F2500BDFA76 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				0AAA35A22A92DA2F00696781 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -219,13 +218,6 @@
 				0AAA359F2A92D5F100696781 /* MoviesModel.swift */,
 			);
 			path = List;
-			sourceTree = "<group>";
-		};
-		0A304B582A911FD600BDFA76 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		0A304B592A91200F00BDFA76 /* Extensions */ = {
@@ -365,14 +357,6 @@
 				0AAA35992A92CFE400696781 /* MovieListTableViewCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		0AAA35A12A92DA1C00696781 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				0AAA35A22A92DA2F00696781 /* Constants.swift */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		0AAA35AE2A93224900696781 /* NetworkCheck */ = {

@@ -29,8 +29,7 @@ class MovieLoginViewModel: MovieLoginViewModelProtocol {
         }
         isLoading.notify(with: true)
         guard user == "Admin" , password == "Password*123" else {
-//            TODO notificar error
-            print("notificar error")
+            isSuccesLoginObservable.notify(with: false)
             return
         }
         isSuccesLoginObservable.notify(with: true)

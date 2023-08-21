@@ -25,16 +25,15 @@ class MovieListViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        networkCheck.addObserver(observer: self)
         setupUI()
         setupBinding()
         callWebService()
-        networkCheck.addObserver(observer: self)
     }
     
     func callWebService() {
-//        viewModel.getMovieList()
+        viewModel.getMovieList()
     }
-    
 }
 
 // MARK: - SetupUI
@@ -105,7 +104,6 @@ extension MovieListViewController {
     
     func reloadCoreData(withMovie movies: [MovieModel]?) {
         self.movieList?.removeAll()
-//        self.scrollToTop()
         self.movieList = movies
         DispatchQueue.main.async {
             self.movieListTableView.reloadData()
@@ -154,7 +152,6 @@ extension MovieListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension MovieListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("ir a detalle")
         guard let movie = movieList?[indexPath.row] else { return }
         presentDetailView(withMovie: movie)
     }
@@ -170,18 +167,11 @@ extension MovieListViewController: NetworkCheckObserver {
             }
             viewModel.getMovieList()
         }else if status == .unsatisfied {
+            movieList?.removeAll()
             DispatchQueue.main.async {
                 self.movieListTableView.reloadData()
             }
             viewModel.getMovieListCoreData()
         }
-    }
-    
-    private func scrollToTop() {
-        let topRow = IndexPath(row: 0,
-                               section: 0)
-        self.movieListTableView.scrollToRow(at: topRow,
-                                   at: .top,
-                                   animated: true)
     }
 }

@@ -73,7 +73,6 @@ class MovieListViewModel: MovieListViewModelProtocol {
                     guard let posterImage = posterImage else { return }
                     service.saveMovie(withMovie: item, withImage: posterImage)
                 }
-                service.saveMovie(withMovie: item, withImage: UIImage())
             }
         }
     }

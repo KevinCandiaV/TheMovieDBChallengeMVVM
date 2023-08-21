@@ -9,28 +9,42 @@ import XCTest
 @testable import TheMovieDBChallengeMVVM
 
 final class TheMovieDBChallengeMVVMTests: XCTestCase {
+    var sut: MovieLoginViewController!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let viewController: MovieLoginViewController = MovieLoginViewController.loadFromNib()
+        sut = viewController
+        sut.loadViewIfNeeded()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        sut = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testLoginTextFieldsAreEmpty() throws {
+        let user = try XCTUnwrap(sut.userTextField)
+        let password = try XCTUnwrap(sut.passwordTextField)
+        guard let usuario = user.text, let pass = password.text else { return }
+        XCTAssertEqual(user.text, usuario,"El campo email debe estar vacio")
+        XCTAssertEqual(password.text, pass, "El campo passsword debe estar vacio")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testLoginTextFieldsAreFilled() throws {
+        let user = try XCTUnwrap(sut.userTextField)
+        let password = try XCTUnwrap(sut.passwordTextField)
+        guard let usuario = user.text, let pass = password.text else { return }
+        XCTAssertEqual(user.text, usuario, "El campo email esta lleno")
+        XCTAssertEqual(password.text, pass, "El campo passsword esta lleno")
+    }
+    
+    func testLoginUserTextFieldTypeKeyboard() throws {
+        let user = try XCTUnwrap(sut.userTextField)
+        XCTAssertEqual(user.keyboardType, .emailAddress, "El tipo de teclado debe ser emailAddress")
+    }
+    
+    func testLoginPasswordTextFieldIsSecureEntry() throws {
+        let password = try XCTUnwrap(sut.passwordTextField)
+        XCTAssertTrue(password.isSecureTextEntry, "El textfield password no contiene entrada segura")
     }
 
 }
