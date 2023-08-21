@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Network
 
 class MovieListViewController: UIViewController {
     // MARK: - Properties
@@ -16,24 +17,24 @@ class MovieListViewController: UIViewController {
     
     var movieList: [MovieModel]?
     
+    var lastMovieIndex = false
+    
+    // MARK: - Network check
+    var networkCheck = NetworkCheck.sharedInstance()
+    
     // MARK: - LifeCycle
-    override func loadView() {
-        super.loadView()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setupUI()
         setupBinding()
         callWebService()
+        networkCheck.addObserver(observer: self)
     }
     
     func callWebService() {
-        viewModel.getMovieList()
+//        viewModel.getMovieList()
     }
     
-    func reloadMovieData(withMovie movies: MoviesModel?) {
-        self.movieList = movies?.results
-        DispatchQueue.main.async {
-            self.movieListTableView.reloadData()
-        }
-    }
 }
 
 // MARK: - SetupUI
@@ -49,7 +50,7 @@ extension MovieListViewController {
         
         movieListTableView.translatesAutoresizingMaskIntoConstraints = false
         movieListTableView.fillSuperview()
-//        movieListTableView.rowHeight = 200
+        movieListTableView.rowHeight = 260
         
         // MARK: Nib Load
         let cellNib = UINib(nibName: MovieListTableViewCell.reusableIdentifier, bundle: nil)
@@ -72,6 +73,42 @@ extension MovieListViewController {
         
         self.viewModel.isSuccessMovieFetch.bind(to: self) { (self, movies) in
             self.reloadMovieData(withMovie: movies)
+        }
+        
+        self.viewModel.isSuccesMoreMovies.bind(to: self) { (self, moreMovies) in
+            self.reloadMoreMoviesData(withMovies: moreMovies)
+        }
+        
+        self.viewModel.isSuccessCoreDataMovieFetch.bind(to: self) { (self, coreDataMovies) in
+            self.reloadCoreData(withMovie: coreDataMovies)
+        }
+    }
+}
+
+// MARK: - Reload Data
+extension MovieListViewController {
+    func reloadMovieData(withMovie movies: MoviesModel?) {
+        self.movieList = movies?.results
+        DispatchQueue.main.async {
+            self.movieListTableView.reloadData()
+            self.viewModel.saveMovieInCoreData(movieList: movies!)
+        }
+    }
+    
+    func reloadMoreMoviesData(withMovies movies: MoviesModel?) {
+        self.lastMovieIndex = false
+        self.movieList?.append(contentsOf: (movies?.results)!)
+        DispatchQueue.main.async {
+            self.movieListTableView.reloadData()
+        }
+    }
+    
+    func reloadCoreData(withMovie movies: [MovieModel]?) {
+        self.movieList?.removeAll()
+//        self.scrollToTop()
+        self.movieList = movies
+        DispatchQueue.main.async {
+            self.movieListTableView.reloadData()
         }
     }
 }
@@ -105,8 +142,11 @@ extension MovieListViewController: UITableViewDataSource {
         let offSetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
-        if (offSetY + scrollView.frame.size.height > contentHeight) {
-            print("llamar mas")
+        if (offSetY + scrollView.frame.size.height > contentHeight) && !lastMovieIndex {
+            if !self.lastMovieIndex {
+                self.lastMovieIndex = false
+                viewModel.getMoreMovies(isLast: lastMovieIndex)
+            }
         }
     }
 }
@@ -117,5 +157,31 @@ extension MovieListViewController: UITableViewDelegate {
         print("ir a detalle")
         guard let movie = movieList?[indexPath.row] else { return }
         presentDetailView(withMovie: movie)
+    }
+}
+
+// MARK: - Network Delegate
+extension MovieListViewController: NetworkCheckObserver {
+    func statusDidChange(status: NWPath.Status) {
+        if status == .satisfied {
+            movieList?.removeAll()
+            DispatchQueue.main.async {
+                self.movieListTableView.reloadData()
+            }
+            viewModel.getMovieList()
+        }else if status == .unsatisfied {
+            DispatchQueue.main.async {
+                self.movieListTableView.reloadData()
+            }
+            viewModel.getMovieListCoreData()
+        }
+    }
+    
+    private func scrollToTop() {
+        let topRow = IndexPath(row: 0,
+                               section: 0)
+        self.movieListTableView.scrollToRow(at: topRow,
+                                   at: .top,
+                                   animated: true)
     }
 }

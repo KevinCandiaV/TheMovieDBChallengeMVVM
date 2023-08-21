@@ -10,6 +10,11 @@ import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    // MARK: - Singleton
+    static var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 
     var window: UIWindow?
 
