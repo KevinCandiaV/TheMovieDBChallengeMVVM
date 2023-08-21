@@ -16,46 +16,12 @@ class MovieListViewController: UIViewController {
     
     var movieList: [MovieModel]?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - LifeCycle
+    override func loadView() {
+        super.loadView()
         setupUI()
         setupBinding()
         callWebService()
-    }
-    
-    func setupUI() {
-        // MARK: - View
-        view.backgroundColor = .white
-        title = "The MovieDB"
-        navigationItem.backBarButtonItem?.isHidden = true
-        // MARK: - MovieListConstraints
-        view.addSubview(movieListTableView)
-        
-        movieListTableView.translatesAutoresizingMaskIntoConstraints = false
-        movieListTableView.fillSuperview()
-//        movieListTableView.rowHeight = 200
-        
-        // MARK: - Nib Load
-        let cellNib = UINib(nibName: MovieListTableViewCell.reusableIdentifier, bundle: nil)
-        
-        // MARK: - Register Nib
-        movieListTableView.register(cellNib, forCellReuseIdentifier: MovieListTableViewCell.reusableIdentifier)
-        
-        // MARK: - Delegate
-        movieListTableView.dataSource = self
-        movieListTableView.delegate = self
-        
-        
-    }
-    
-    func setupBinding() {
-        self.viewModel.isLoading.bind(to: self) { (self, isLoading) in
-            isLoading ? ActivityOverlay.show() : ActivityOverlay.dismiss()
-        }
-        
-        self.viewModel.isSuccessMovieFetch.bind(to: self) { (self, movies) in
-            self.reloadMovieData(withMovie: movies)
-        }
     }
     
     func callWebService() {
@@ -68,9 +34,58 @@ class MovieListViewController: UIViewController {
             self.movieListTableView.reloadData()
         }
     }
-
 }
 
+// MARK: - SetupUI
+extension MovieListViewController {
+    func setupUI() {
+        // MARK: View
+        view.backgroundColor = .white
+        title = "The MovieDB"
+        navigationItem.hidesBackButton = true
+        navigationController?.navigationBar.prefersLargeTitles = true
+        // MARK: MovieListConstraints
+        view.addSubview(movieListTableView)
+        
+        movieListTableView.translatesAutoresizingMaskIntoConstraints = false
+        movieListTableView.fillSuperview()
+//        movieListTableView.rowHeight = 200
+        
+        // MARK: Nib Load
+        let cellNib = UINib(nibName: MovieListTableViewCell.reusableIdentifier, bundle: nil)
+        
+        // MARK: Register Nib
+        movieListTableView.register(cellNib, forCellReuseIdentifier: MovieListTableViewCell.reusableIdentifier)
+        
+        // MARK: Delegate
+        movieListTableView.dataSource = self
+        movieListTableView.delegate = self
+    }
+}
+
+// MARK: - SetupBinding
+extension MovieListViewController {
+    func setupBinding() {
+        self.viewModel.isLoading.bind(to: self) { (self, isLoading) in
+            isLoading ? ActivityOverlay.show() : ActivityOverlay.dismiss()
+        }
+        
+        self.viewModel.isSuccessMovieFetch.bind(to: self) { (self, movies) in
+            self.reloadMovieData(withMovie: movies)
+        }
+    }
+}
+
+// MARK: - List To MovieDetail
+extension MovieListViewController {
+    func presentDetailView(withMovie movie: MovieModel) {
+        let movieListViewController: MovieDetailViewController = MovieDetailViewController.instantiate()
+        movieListViewController.data = movie
+        self.navigationController?.pushViewController(movieListViewController, animated: true)
+    }
+}
+
+// MARK: - UITableViewDataSource
 extension MovieListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieList?.count ?? 0
@@ -94,12 +109,13 @@ extension MovieListViewController: UITableViewDataSource {
             print("llamar mas")
         }
     }
-    
-    
 }
 
+// MARK: - UITableViewDelegate
 extension MovieListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("ir a detalle")
+        guard let movie = movieList?[indexPath.row] else { return }
+        presentDetailView(withMovie: movie)
     }
 }

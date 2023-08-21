@@ -18,6 +18,7 @@ class MovieLoginViewController: UIViewController {
     // MARK: - ViewModel
     var viewModel: MovieLoginViewModelProtocol = MovieLoginViewModel()
     
+    // MARK: - LoadNib
     static func loadFromNib() -> MovieLoginViewController {
         MovieLoginViewController(nibName: "MovieLoginViewController", bundle: nil)
     }
@@ -27,7 +28,6 @@ class MovieLoginViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupBinding()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,22 +42,21 @@ class MovieLoginViewController: UIViewController {
         }
         viewModel.login(user: user, password: pass)
     }
-    
-    func presentLoginView() {
-        let movieListViewController: MovieListViewController = MovieListViewController()
-        self.navigationController?.pushViewController(movieListViewController, animated: true)
-    }
+}
 
+extension MovieLoginViewController: UITextFieldDelegate {
+//    TODO Action for TextfieldDelegate
 }
 
 // MARK: - SetupUI
 extension MovieLoginViewController {
     func setupUI() {
+        // MARK: - Target Button
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
+        // MARK: - Delegates
         userTextField.delegate = self
         passwordTextField.delegate = self
-        
     }
 }
 
@@ -69,13 +68,15 @@ extension MovieLoginViewController {
         }
         
         self.viewModel.isSuccesLoginObservable.bind(to: self) { (self, isSuccess) in
-//            TODO Ir a otra vista
-            print("Move to other view")
-            self.presentLoginView()
+            self.presentMovieListView()
         }
     }
 }
 
-extension MovieLoginViewController: UITextFieldDelegate {
-    
+// MARK: - Login To MovieList
+extension MovieLoginViewController {
+    func presentMovieListView() {
+        let movieListViewController: MovieListViewController = MovieListViewController()
+        self.navigationController?.pushViewController(movieListViewController, animated: true)
+    }
 }
