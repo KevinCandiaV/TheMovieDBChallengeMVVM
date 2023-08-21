@@ -44,7 +44,7 @@ class MovieLoginViewController: UIViewController {
     }
     
     func presentLoginView() {
-        let movieListViewController = UIViewController()
+        let movieListViewController: MovieListViewController = MovieListViewController()
         self.navigationController?.pushViewController(movieListViewController, animated: true)
     }
 
